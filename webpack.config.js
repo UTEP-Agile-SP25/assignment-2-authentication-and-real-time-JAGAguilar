@@ -5,7 +5,7 @@ module.exports = {
         index: './src/index.js',
         auth: './src/auth.js',
         config: './src/config.js',
-        citymanager: './src/citymanager.js'
+        songmanager: './src/songmanager.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),

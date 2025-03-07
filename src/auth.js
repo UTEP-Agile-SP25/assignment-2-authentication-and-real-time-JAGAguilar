@@ -1,7 +1,7 @@
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "@firebase/auth";
 import { auth } from "./config";
 import { db } from "./config";
-import { collection, doc, setDoc, getDocs} from "@firebase/firestore";
+import { collection, doc, setDoc, getDocs,onSnapshot} from "@firebase/firestore";
 
 onAuthStateChanged(auth,async (user)=>{
     if(user){
@@ -47,7 +47,7 @@ export async function signUp(firstName, lastName, email, password){
 export async function login(email,password) {
     try{
         const userCredential = await signInWithEmailAndPassword(auth,email,password)
-        window.location.href = "citymanager.html"
+        window.location.href = "songmanager.html"
 
     }catch(error){
         console.error("Login error: ",error)
