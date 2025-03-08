@@ -1,8 +1,26 @@
 <!DOCTYPE html>
 <head>
     <body>
-        <h1>City Manager Home Page</h1>
+        <h1>Manage your song list</h1>
         <div id="greeting"></div>
+        <h2>Add Song</h2>
+        <form id="songForm">
+            <input type="text" id="title" placeholder="Enter Title"><br><br>
+            <input type="text" id="artist" placeholder="Enter Artist"><br><br>
+            <input type="number" id="year" placeholder="Enter Year of Release"><br><br>
+            <input type="number" id="rating" placeholder="Enter Personal Rating (1-5)"><br><br>
+            <input type="submit" value="Save song">
+        </form>
+        <h2>Delete Song</h2>
+        <form id="deleteForm">
+            <input type="text" id="ID" placeholder="Enter Song ID"><br><br>
+            <input type="submit" value="Delete Song">
+        </form>
+        <ul id = "songList"></ul><br><br>
+        <form id="LogoutButton">
+            <input type="submit" value="Logout">
+        </form>
+
     </body>
     <script src="songmanager.bundle.js"></script>
 </head>

@@ -2,7 +2,7 @@ import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndP
 import { auth } from "./config";
 import { db } from "./config";
 import { collection, doc, setDoc, getDocs,onSnapshot} from "@firebase/firestore";
-
+export {onSnapshot}
 onAuthStateChanged(auth,async (user)=>{
     if(user){
         console.log("Logged In User: ", user.email)
@@ -38,9 +38,10 @@ export async function signUp(firstName, lastName, email, password){
             lastname:lastName,
             timestamp: new Date()
         })
+        window.location.href = "songmanager.html"
 
     }catch(error){
-        console.error("Eroor fetching user data: ",error)
+        console.error("Error fetching user data: ",error)
     }
 }
 
@@ -59,6 +60,7 @@ export async function logout() {
     try {
         await signOut(auth)
         console.log("User Logged Out")
+        window.location.href = "index.html"
     } catch (error) {
         console.error("Logout error: ",error)
     }
